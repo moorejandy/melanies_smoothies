@@ -28,6 +28,8 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
+        fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/watermelon")
+        sf_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
 
     #st.write(ingredients_string)
@@ -47,6 +49,6 @@ if ingredients_list:
 
 #new section to display smoothiefroot nutrition information
 import requests
-fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/watermelon")
+
 #st.text(fruityvice_response.json())
-sf_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
+
